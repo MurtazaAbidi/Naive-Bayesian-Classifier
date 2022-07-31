@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR A3</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <script src="eel.js"></script>
+    <script>
+        function testing(){
+                innertext = document.getElementById('mid');
+                innertext.innerHTML = 'Loading....'
+                eel.testing();
+        }
+        function showPerformance (acc, c_recall, c_precision, c_f1_measure, nc_recall, nc_precision, nc_f1_measure){
+            innertext = document.getElementById('mid');
+            var text = "";
+            text += "Accuracy:- "+acc+"%<br><br>";
+            
+            text += "Recall(nonCourse):- "+nc_recall+"%<br>";
+            text += "Precision(nonCourse):- "+nc_precision+"%<br>";
+            text += "F1-Measure(nonCourse):- "+nc_f1_measure+"%<br><br>";
+            
+            text += "Recall(course):- "+c_recall+"%<br>";
+            text += "Precision(course):- "+c_precision+"%<br>";
+            text += "F1-Measure(course):- "+c_f1_measure+"%<br><br>";
+            innertext.innerHTML = "Preformance:<br><br>"+text;
+        }
+        eel.expose(showPerformance);
+
+        </script>
+</head>
+<body>
+    <div class="heading">IR Assignment 3 (19K-0364)</div>
+    <div class="mid" id="mid" > 
+        <div class="dropdown">
+            Model is already Trained on 80% of DataSet
+        </div>
+        <button class= "btn" onclick="testing()">Test on remaining 20% of DataSet</button>
+    </div>
+    </div>
+</body>
+</html>
